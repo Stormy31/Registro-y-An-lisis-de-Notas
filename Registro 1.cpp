@@ -34,7 +34,7 @@ Estudiante estudiantes[MAX_ESTUDIANTES];
 int numEstudiantes = 0;
 void registrarEstudiante() {
     if (numEstudiantes >= MAX_ESTUDIANTES) {
-        cout << "No se pueden registrar más estudiantes.\n";
+        cout << "No se pueden registrar mas estudiantes.\n";
         return;
     }
     
@@ -56,24 +56,24 @@ void matricularEstudiante() {
     for (int i = 0; i < numEstudiantes; ++i) {
         if (estudiantes[i].id == id) {
             if (estudiantes[i].numMaterias >= MAX_MATERIAS) {
-                cout << "El estudiante ya está matriculado en el máximo de materias.\n";
+                cout << "El estudiante ya está matriculado en el maximo de materias.\n";
                 return;
             }
             cout << "Seleccione la materia a matricular :\n";
-            cout << "1. Matemática\n2. Programación\n3. Literatura\n";
+            cout << "1. Matematica\n2. Programacion\n3. Literatura\n";
             int opcion;
             cin >> opcion;
             cin.ignore(); // Limpiar el buffer
 
             Materia* materia = new Materia;
             switch (opcion) {
-                case 1: materia->nombreMateria = "Matemática"; break;
-                case 2: materia->nombreMateria = "Programación"; break;
+                case 1: materia->nombreMateria = "Matematica"; break;
+                case 2: materia->nombreMateria = "Programacion"; break;
                 case 3: materia->nombreMateria = "Literatura"; break;
                 default: cout << "Opción inválida.\n"; return;
             }
             if (materia->numTrabajos == 0) { // Solo se crean una vez
-                cout << "Ingrese el número de trabajos para " << materia->nombreMateria << ": ";
+                cout << "Ingrese el numero de trabajos para " << materia->nombreMateria << ": ";
                 cin >> materia->numTrabajos;
                 cin.ignore(); // Limpiar el buffer
 
@@ -97,7 +97,7 @@ void crearTrabajosPorMateria() {
         for (int j = 0; j < estudiantes[i].numMaterias; ++j) {
             Materia* materia = estudiantes[i].materias[j].materia;
             if (materia->numTrabajos == 0) { // Solo se crean una vez
-                cout << "Ingrese el número de trabajos para " << materia->nombreMateria << ": ";
+                cout << "Ingrese el numero de trabajos para " << materia->nombreMateria << ": ";
                 cin >> materia->numTrabajos;
                 cin.ignore(); // Limpiar el buffer
 
@@ -177,7 +177,7 @@ int main() {
             case 4: asignarNotas(); break;
             case 5: mostrarResumenNotas(); break;
             case 6: cout << "Saliendo...\n"; break;
-            default: cout << "Opción inválida.\n"; break;
+            default: cout << "Opcion invalida.\n"; break;
         }
     } while (opcion != 6);
 
